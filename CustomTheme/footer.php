@@ -12,6 +12,9 @@
 namespace WP_Rig\WP_Rig;
 
 ?>
+	<footer id="colophon" class="site-footer-details">
+		<?php get_template_part( 'template-parts/footer/footerContact' ); ?>
+	</footer><!-- #colophon -->
 
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/info' ); ?>
