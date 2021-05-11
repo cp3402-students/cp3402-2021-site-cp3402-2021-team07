@@ -9,7 +9,13 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<div class="site-info-right">
+<div class="site-info-contact">
+	<?php
+	print( "(+61) 0431 618 618\r\nCoralie Costigan\r\nClub Secretary" )
+	?>
+</div><!--.site-info-contact -->
+
+<div class="site-info-details">
 	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp-rig' ) ); ?>">
 		<?php
 		/* translators: %s: CMS name, i.e. WordPress. */
@@ -25,4 +31,4 @@ namespace WP_Rig\WP_Rig;
 		the_privacy_policy_link( '<span class="sep"> | </span>' );
 	}
 	?>
-</div><!-- .site-info-right -->
+</div><!-- .site-info -->
