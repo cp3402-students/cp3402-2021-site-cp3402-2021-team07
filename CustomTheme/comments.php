@@ -1,50 +1,67 @@
 <?php
-/*
-The comments page for Bones
-*/
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package wp_rig
+ */
 
-// don't load it if you can't comment
+namespace WP_Rig\WP_Rig;
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
 if ( post_password_required() ) {
-  return;
+	return;
 }
 
+wp_rig()->print_styles( 'wp-rig-comments' );
+
 ?>
+<div id="comments" class="comments-area">
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) {
+		?>
+		<h2 class="comments-title">
+			<?php
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wp-rig' ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				);
+			} else {
+				printf(
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'wp-rig' ) ),
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				);
+			}
+			?>
+		</h2><!-- .comments-title -->
 
-<?php // You can start editing here. ?>
+		<?php the_comments_navigation(); ?>
 
-  <?php if ( have_comments() ) : ?>
+		<?php wp_rig()->the_comments(); ?>
 
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?></h3>
+		<?php
+		if ( ! comments_open() ) {
+			?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-rig' ); ?></p>
+			<?php
+		}
+	}
 
-    <section class="commentlist">
-      <?php
-        wp_list_comments( array(
-          'style'             => 'div',
-          'short_ping'        => true,
-          'avatar_size'       => 40,
-          'callback'          => 'bones_comments',
-          'type'              => 'all',
-          'reply_text'        => __('Reply', 'bonestheme'),
-          'page'              => '',
-          'per_page'          => '',
-          'reverse_top_level' => null,
-          'reverse_children'  => ''
-        ) );
-      ?>
-    </section>
-
-    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-    	<nav class="navigation comment-navigation" role="navigation">
-      	<div class="comment-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'bonestheme' ) ); ?></div>
-      	<div class="comment-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'bonestheme' ) ); ?></div>
-    	</nav>
-    <?php endif; ?>
-
-    <?php if ( ! comments_open() ) : ?>
-    	<p class="no-comments"><?php _e( 'Comments are closed.' , 'bonestheme' ); ?></p>
-    <?php endif; ?>
-
-  <?php endif; ?>
-
-  <?php comment_form(); ?>
-
+	comment_form();
+	?>
+</div><!-- #comments -->

@@ -1,21 +1,22 @@
-				<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
+<?php
+/**
+ * The sidebar containing the main widget area
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_rig
+ */
 
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+namespace WP_Rig\WP_Rig;
 
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
+if ( ! wp_rig()->is_primary_sidebar_active() ) {
+	return;
+}
 
-					<?php else : ?>
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 
-						<?php
-							/*
-							 * This content shows up if there are no widgets defined in the backend.
-							*/
-						?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
-
-					<?php endif; ?>
-
-				</div>
+?>
+<aside id="secondary" class="primary-sidebar widget-area">
+	<h2 class="screen-reader-text"><?php esc_attr_e( 'Asides', 'wp-rig' ); ?></h2>
+	<?php wp_rig()->display_primary_sidebar(); ?>
+</aside><!-- #secondary -->

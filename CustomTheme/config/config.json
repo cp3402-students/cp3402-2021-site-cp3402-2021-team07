@@ -1,0 +1,15 @@
+{
+  "theme": {
+    "slug": "newrig",
+    "name": "New Rig",
+    "author": "Hayden Bailey"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "wprig-starter_wordpress_1",
+      "bypassPort": 8080,
+      "open": false
+    }
+  }
+}

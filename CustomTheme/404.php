@@ -1,43 +1,21 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package wp_rig
+ */
 
-			<div id="content">
+namespace WP_Rig\WP_Rig;
 
-				<div id="inner-content" class="wrap cf">
+get_header();
 
-					<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+wp_rig()->print_styles( 'wp-rig-content' );
 
-						<article id="post-not-found" class="hentry cf">
-
-							<header class="article-header">
-
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
-
-							</header>
-
-							<section class="entry-content">
-
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
-
-							</section>
-
-							<section class="search">
-
-									<p><?php get_search_form(); ?></p>
-
-							</section>
-
-							<footer class="article-footer">
-
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
-
-							</footer>
-
-						</article>
-
-					</main>
-
-				</div>
-
-			</div>
-
-<?php get_footer(); ?>
+?>
+	<main id="primary" class="site-main">
+		<?php get_template_part( 'template-parts/content/error', '404' ); ?>
+	</main><!-- #primary -->
+<?php
+get_footer();
