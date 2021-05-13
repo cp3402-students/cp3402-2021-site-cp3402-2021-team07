@@ -96,7 +96,7 @@
 		min-height: 100%;
 		grid-area: main;
 		min-width: 0;
-		border-bottom: 1px solid var(--global-font-color)
+		border-bottom: 1px solid var(--global-font-color);
 	}
 
 	.primary-sidebar {
@@ -104,7 +104,7 @@
 		min-width: 0;
 	}
 
-	.site-footer, .site-footer-details {
+	.site-footer .site-footer-details {
 		flex-shrink: 0;
 	}
 
@@ -222,6 +222,8 @@ select {
 }
 
 .site-branding {
+	display:flex;
+	flex-direction: column;
 	text-align: center;
 	padding: 60px 20rem 1.75em 20rem;
 }
@@ -249,6 +251,12 @@ select {
 	line-height: 1.4;
 	word-wrap: break-word;
 	color: #757575;
+}
+
+.bookings_button {
+	max-width: min-content;
+	height: min-content;
+	font-size: large;
 }
 
 /*--------------------------------------------------------------
