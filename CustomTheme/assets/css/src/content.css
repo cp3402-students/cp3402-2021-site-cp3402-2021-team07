@@ -56,6 +56,7 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	text-align: center;
 }
 
 .entry-content > ul,
@@ -139,8 +140,7 @@
 
 .entry-footer {
 	clear: both;
-	padding: 1.5em 1.5rem 3em;
-	border-bottom: 1px solid var(--global-font-color);
+	padding: 1.5em 1.5rem 0.5em;
 }
 
 @media (--content-query) {
