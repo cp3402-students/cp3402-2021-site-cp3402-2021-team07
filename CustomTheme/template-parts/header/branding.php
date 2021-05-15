@@ -19,7 +19,6 @@ namespace WP_Rig\WP_Rig;
 		<?php
 	} else {
 		?>
-		<button class="bookings_button" type="button">BOOKINGS</button>
 		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php
 	}
