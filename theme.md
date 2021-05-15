@@ -4,7 +4,7 @@ Design Decisions:\
 The website has been designed to be minimalistic and clean. All content within the pages has \
 been centered so as to draw the main focus into the column structure. With memberships \
 being one of our main call-to-actions this menu selection has been highlighted on every page so \
-as to be the first thing the user will see when interacting with the website. The majority of the \ 
+as to be the first thing the user will see when interacting with the website. The majority of the \
 pages containing large amounts of text have been organised into a more natural feeling layout. \
 Another major decision falls to ease of navigation with the layout being designed to be simplistic and \
 natural.\
