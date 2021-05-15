@@ -12,3 +12,8 @@ https://nodejs.org/en/download/
 https://getcomposer.org/download/
 5. Wprig
 https://github.com/TheMilianMan/wprig-starter
+
+
+deployment.md: https://github.com/cp3402-students/cp3402-2021-site-cp3402-2021-team07/blob/main/deployment.md
+theme.md: https://github.com/cp3402-students/cp3402-2021-site-cp3402-2021-team07/blob/main/theme.md
+site.md: https://github.com/cp3402-students/cp3402-2021-site-cp3402-2021-team07/blob/main/site.md
