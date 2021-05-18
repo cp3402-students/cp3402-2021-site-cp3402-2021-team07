@@ -14,7 +14,7 @@ DreamHost
 - GitHub – code publishing and sharing between team 
 ## **Testing and automation:** 
 - BrowserSync – live testing 
-- Glup – automation  
+- Gulp – automation  
 
 ## **The Process:**
 Cloning the repo from GitHub on to your local environment. Start Docker then in the CLI (GitBash or terminal) in your folder where you downloaded the repo of the theme run the docker-compose.yml \
